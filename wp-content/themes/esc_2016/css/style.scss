@@ -51,6 +51,12 @@ header, hgroup, footer, section, article, aside { display: block }
     font-style: normal;
 }
 
+* {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 body {
 	background-color: #000;
 	color: #d0d0d0; 
@@ -399,6 +405,9 @@ $red: #f6303e;
 .games {
 	position: relative;
 	padding-bottom: 30%;
+	.text {
+		margin-bottom: 6%;
+	}
 }
 
 .holder {
@@ -410,30 +419,92 @@ $red: #f6303e;
 
 .carousel {
 // 	overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
-//     position: absolute;
-    left: 0px;
-	div {
-// 		margin: 0 0 0 10px;
-		padding: 0 5px;
-// 		transform: all 1000ms ease;
-// transition: transform 1000ms linear 1s;
-// 		    -webkit-transition-delay: .5s; /* Safari */
-//     transition-delay: .5s;
-//     display: table-cell;
-//     vertical-align: middle;
+    width: 110%;
+    margin: 2% auto 0;
+//     position: relative;
+    position: absolute;
+    left: -5%;
+	.item {
+		overflow: hidden;
+		padding: 0 .5%;
+		position: relative;
 		img {
 			display: block;
+			margin: auto;
+			max-width: 100%;
 			width: 100%;
+			vertical-align: middle;
+		}
+		video {
+			position: absolute;
+			top: 0;
+			left: 10%;
+			z-index: -1;
+			max-width: 100%;
+			width: 80%;
 		}
 	}
 }
 
+.center {
+	
+}
+
+/*
+.carousel .carousel__content .item .title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: -33px 0 0 0;
+  padding: 0;
+  font-size: 3rem;
+  width: 100%;
+  text-align: center;
+ letter-spacing: .3rem;
+  color: #FFF;
+}
+
+.carousel .carousel__content .item .title--sub {
+  margin-top: 20px;
+  font-size: 1.2em;
+  opacity: .5;
+}
+
+.carousel .carousel__nav {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -17px;
+  left: 0;
+  z-index: 1;
+}
+
+.carousel .carousel__nav .nav {
+  position: absolute;
+  top: 0;
+  color: #000;
+  background: #FFF;
+  padding: 8px 12px;
+  font-weight: bold;
+  text-decoration: none;
+ font-size: .8rem;
+  transition: padding .25s ease;
+}
+
+.carousel .carousel__nav .nav:hover { padding: 8px 20px; }
+
+.carousel .carousel__nav .nav--left { border-radius: 0px 3px 3px 0px; }
+
+.carousel .carousel__nav .nav--right {
+  right: 0;
+  border-radius: 3px 0px 0px 3px;
+}
+*/
+
 .slick-center {
 // 	padding: 0 50px !important;
 // 	margin: 0 20px;
-//     transform: scale(1.5);	
+    transform: scale(1.3);	
 //     width: 110% !important;
 }
 
@@ -444,7 +515,7 @@ $red: #f6303e;
 /* Slider */
 .slick-slider
 {
-    position: relative;
+//     position: relative;
 
     display: block;
     box-sizing: border-box;
@@ -466,7 +537,7 @@ $red: #f6303e;
     position: relative;
 
     display: block;
-    overflow: hidden;
+//     overflow: hidden;
 
     margin: 0;
     padding: 0;
@@ -639,7 +710,7 @@ footer {
 	min-height: 50px;
 	padding: 3% 5%;
 	vertical-align: middle;
-	width: 90%;
+	width: 100%;
     position: relative;
     z-index: 1;
 	.alignleft {

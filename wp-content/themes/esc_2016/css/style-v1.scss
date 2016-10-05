@@ -1,0 +1,695 @@
+/*-----------------------------------------------------------
+
+	Theme Name: 
+	Theme URI: 
+	Description: 
+	Author: Lauren Gibbons
+	Author URI: http://www.esidesign.com
+	Version: 1.0
+    License: GNU General Public License version 3.0 
+    License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+/*-----------------------------------------------------------------------------------*
+/* = Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+/*-----------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { border: 0; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit; margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
+:focus { outline: 0 }
+body { background: #fff; line-height: 1; }
+ol, ul { list-style: none; padding: 0; margin: 0; }
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { font-weight: normal; text-align: left; }
+blockquote:before, blockquote:after, q:before, q:after { content: "" }
+blockquote, q { quotes: "" "" }
+a img { border: 0 }
+figure img { max-width: 100% }
+header, hgroup, footer, section, article, aside { display: block }
+#wpstats { display: none }
+
+/*-----------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "futura";
+	src: url('../fonts/FuturaStd-Light.eot');
+	src: local('☺'), url('../fonts/FuturaStd-Light.woff') format('woff'), url('../fonts/FuturaStd-Light.ttf') format('truetype'), url('../fonts/FuturaStd-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "futura";
+	src: url('../fonts/FuturaStd-Medium.eot');
+	src: local('☺'), url('../fonts/FuturaStd-Medium.woff') format('woff'), url('../fonts/FuturaStd-Medium.ttf') format('truetype'), url('../fonts/FuturaStd-Medium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "futura";
+    src: url('../fonts/FuturaStd-Heavy.otf') format('embedded-opentype');
+	src: url('../fonts/FuturaStd-Heavy.eot');
+	src: local('☺'), url('../fonts/FuturaStd-Heavy.woff') format('woff'), url('../fonts/FuturaStd-Heavy.ttf') format('truetype'), url('../fonts/FuturaStd-Heavy.svg') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+	background-color: #000;
+	color: #d0d0d0; 
+	font-family: Verdana, sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 200%;
+	position: absolute;
+	top: 0%;
+	padding-bottom: 5%;
+	overflow-x: hidden;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+p, a {
+/*
+	font-family: Verdana, sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 200%;
+*/
+	text-align: center;
+	margin: 0 auto 2%;
+}
+
+a {
+	color: #05beff;
+// 	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+// 	color: #FFF;
+	font-family: "Futura", Helvetica, sans-serif;
+	font-weight: 100;
+}
+
+h1 {
+	font-size: 50px;
+	letter-spacing: 3px;
+	line-height: 1.5;
+	margin: 6% 0 3%;
+	&:first-of-type {
+		margin-top: 0;
+	}
+}
+
+h2 {
+	color: #FFF;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 4px;
+	line-height: 175%;
+	margin: 0 0 2%;
+}
+
+h3 {
+	font-size: 28px;
+	font-weight: 500;
+	letter-spacing: 3px;
+	line-height: 1;
+	margin: 0px 0 6%;
+}
+
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: "Futura", Helvetica, sans-serif;
+	color: #c0bbbb;
+	font-size: 20px;
+	line-height: 160%;
+}
+
+h5 {
+	font-size: 18px;
+	line-height: 1.3333333333;
+}
+
+h6 {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+$blue: #06a7e2;
+$red: #f6303e;
+
+.blue {
+	color: $blue;
+}
+
+.blue-bg {
+	background-color: $blue;
+}
+
+.red-bg {
+	background-color: $red;
+}
+
+.gray, .black {
+	padding: 6% 8%;
+}
+
+.gray {
+	background-color: #474747;
+}
+
+.black {
+	background-color: #2d3033;
+/*
+	p {
+		color: #dddddd;
+	}
+	h1, h2 {
+		color: #878787;
+	}
+*/
+}
+
+/* Alignment */
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.threecol {
+	display: inline-block;
+	margin-right: 2%;
+	width: 32%;
+	vertical-align: top;
+	&:nth-child(3n+3) {
+		margin-right: 0;
+	}
+}
+
+.text {
+	margin: 0 auto;
+	width: 65%;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.intro {
+	position: relative;
+	z-index: -11;
+	#canvas {
+		position: absolute;
+		left: 20%;
+		top: 15%;
+		z-index: -10;
+	}
+	h4.blue {
+		margin-bottom: 4%;
+	}
+}
+
+.logo {
+	background: url('../img/logo.png') no-repeat left center;
+	display: block;
+// 	text-indent: -9999px;
+	margin: 8% auto 5%;
+	height: 189px;
+	width: 220px;
+}
+
+.tickets {
+	background: url('../img/tickets.png') no-repeat left center;
+	display: block;
+	text-indent: -9999px;
+	height: 43px;
+	width: 145px;
+}
+
+.reel {
+	.text {
+		margin-top: 3%;
+	}
+}
+
+.experience {
+	background: #191919;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	img {
+		width: 100%;
+	}
+	.left, .right {
+		align-items: stretch;
+	}
+	.left {
+		width: 20%;
+		flex: 1;
+	}
+	.right {
+		text-align: left;
+	    padding-left: 5%;
+		width: 55%;
+		h2 {
+			line-height: 1;
+			margin-bottom: 3%;
+		}
+		p {
+			text-align: left;
+		}
+	}
+}
+
+.locations {
+	background: #191919;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	img {
+		width: 100%;
+	}
+	.left, .right {
+		align-items: stretch;
+	}
+	.left {
+		text-align: right;
+		width: 20%;
+		flex: 1;
+		h2 {
+// 			line-height: 1;
+			margin-bottom: 2.5%;
+		}
+		p {
+			margin-bottom: .5%;
+			text-align: right;
+		}
+	}
+	.right {
+	    padding-left: 6%;
+		width: 59%;
+		iframe {
+			float: left;
+			margin-top: 2.5%;
+		}
+	}
+}
+
+.buy-tickets {
+	background: url('../img/buy-tickets.png') no-repeat left center;
+	display: block;
+	float: right;
+	margin: 7% 0 0;
+	text-indent: -9999px;
+	height: 43px;
+	width: 165px;
+}
+
+.about-us {
+	background: url('../img/about.png') no-repeat left center;
+	display: block;
+	margin: 4% auto 2%;
+	text-indent: -9999px;
+	height: 43px;
+	width: 165px;
+}
+
+.email {
+	background: url('../img/email.png') no-repeat left center;
+	display: block;
+	margin: 1% auto 5%;
+	text-indent: -9999px;
+	height: 39px;
+	width: 337px;
+}
+
+.growing-circle {
+//   margin: auto;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.join {
+	position: relative;
+	overflow: hidden;
+	.text {
+		margin-top: 1%;
+		position: relative;
+		z-index: 1;
+	}
+	.growing-circle {
+		height: 450px;
+		width: 450px;
+		opacity: .2;
+		position: absolute;
+		z-index: 0;
+		top: 20%;
+	}
+	.red-bg {
+		left: 18%;
+		-webkit-animation:grow 6s infinite 1s;
+	}
+	.blue-bg {
+		top: 22%;
+		left: 38%;
+		-webkit-animation:grow 5s infinite;
+	}
+}
+
+@-webkit-keyframes grow {
+ 0% {
+-webkit-transform: scale( 1 );-moz-transform: scale( 1 );-o-transform: scale( 1 );-ms-transform: scale( 1 );transform: scale( 1 );
+  }
+  
+  50% {
+  -webkit-transform: scale( 1.08 );-moz-transform: scale( 1.08 );-o-transform: scale( 1.08 );-ms-transform: scale( 1.08 );transform: scale( 1.08 );
+  }
+  
+  100% {
+  -webkit-transform: scale( 1 );-moz-transform: scale( 1 );-o-transform: scale( 1 );-ms-transform: scale( 1 );transform: scale( 1 );
+  }
+}
+
+.games {
+	position: relative;
+	padding-bottom: 30%;
+}
+
+.holder {
+	position: absolute;
+	margin: 4% 0;
+	left: 0;
+	width: 100%;
+}
+
+.carousel {
+// 	overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+//     position: absolute;
+    left: 0px;
+	div {
+// 		margin: 0 0 0 10px;
+		padding: 0 5px;
+// 		transform: all 1000ms ease;
+// transition: transform 1000ms linear 1s;
+// 		    -webkit-transition-delay: .5s; /* Safari */
+//     transition-delay: .5s;
+//     display: table-cell;
+//     vertical-align: middle;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+.slick-center {
+// 	padding: 0 50px !important;
+// 	margin: 0 20px;
+//     transform: scale(1.5);	
+//     width: 110% !important;
+}
+
+.slick-center {
+// 	width: 500px !important;
+}
+
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0px;
+    left: 0;
+// 	height: 200px;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+	
+    height: 100%;
+    min-height: 1px;
+//     width: 200px !important;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-dots {
+	display: none !important;
+}
+
+/*
+#header {
+	background-color: #000;	
+	position: relative;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+.logo {
+	float: left;
+	position: absolute;
+	left: 5%;
+	top: -36px;
+	width: 738px;
+	overflow: hidden;
+	a {
+		background: url('../img/header-logo.png') no-repeat left center;
+		background-size: 100% 100%;
+		display: block;
+		height: 210px;
+		width: 738px;
+	}
+}
+
+#menu-navigation {
+	margin: 0 auto;
+	position: relative;
+	list-style: none;
+	padding: 67px 0 0px 338px;
+	li {
+		float: left;
+		padding: 0 3%;
+		text-align: left;
+		&:first-of-type {
+			padding-left: 0;
+		}
+		a {
+			font-family: "Futura", Verdana, "proxima-nova", sans-serif;
+			color: #EFEFEF;
+			letter-spacing: 1px;
+			font-size: 17px;
+			font-weight: 300;
+			text-transform: uppercase;
+			text-decoration: none;
+			&:hover {
+				color: #00a7e1 !important;
+			}
+		}
+		a.current {
+			color: #00a7e1 !important;
+		}
+	}
+}
+*/
+
+.clearfix {
+	zoom: 1;
+}
+
+.container {
+	margin: 5% auto 0;
+	text-align: center;
+	width: 90%;
+	max-width: 1600px;
+}
+
+
+footer {
+	background-color: #06a7e2;
+	clear: both;
+	margin: 0 auto 0;
+	min-height: 50px;
+	padding: 3% 5%;
+	vertical-align: middle;
+	width: 90%;
+    position: relative;
+    z-index: 1;
+	.alignleft {
+		width: 65%;
+	}
+	p {
+		color: #2d3033;
+		font-size: 14px;
+		font-weight: 300;
+		padding-top: 5px;
+// 		letter-spacing: 1px;
+		text-align: left;
+	}
+}
+
+@media only screen and (max-width: 767px) {	
+.gray, .black {
+	padding: 6% 4%;
+}
+
+
+.text {
+	width: 90%;
+}
+
+}
+
+@media only screen and (max-width: 490px) {
+.gray, .black {
+	padding: 6% 2%;
+}
+
+.text {
+	width: 98%;
+}
+
+.games {
+	padding-bottom: 66%;
+}
+
+}
+
+@media only screen and (max-width : 320px) {
+
+}
+
+@media screen and (max-aspect-ratio: 16/9) {
+
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+
+}

@@ -48,20 +48,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<!-- <?php include('analytics.php'); ?> -->
 <div id="wrapper" class="hfeed site">
-<!--
-<div id="header">
-	<header id="masthead" class="site-header" role="banner">
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<div class="logo">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
-				</div>
-				<?php wp_nav_menu( array('menu' => 'Navigation' )); ?>
-			</nav>
-	</header>
-</div>
--->
 
 <?php function isMobile() {
     return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);

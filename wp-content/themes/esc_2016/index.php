@@ -65,20 +65,28 @@ if ( $the_query->have_posts() ) {
 wp_reset_postdata(); 
 $args = array(
     'post_type' =>'games',
-    'orderby' => 'post_title',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'order' => 'DESC',
     'posts_per_page' => 10
 );   
 $new_query = new WP_Query( $args );
 if ( $new_query->have_posts() ) {
-	echo '<div class="holder"><div class="carousel">';
+	echo '<div class="carousel">';
 	while ( $new_query->have_posts() ) {
 		$new_query->the_post();
 // 		echo get_post_thumbnail_id();
 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'form_thumb');
-		echo '<div><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></div>';
+		echo '<div class="item"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+		if(get_field('promo_mp4') != '') {
+			$promo_mp4 = get_field('promo_mp4');
+			$promo_mp4 = $promo_mp4['url'];
+			echo '<video preload="auto" class="trailer">
+				<source src="'.$promo_mp4.'" type="video/mp4; codecs="avc1.42E01E" />
+			</video>';
+		}
+		echo '</div>';
 	}
-	echo '</div></div>';
+	echo '</div>';
 }
 wp_reset_postdata(); 
 ?>
