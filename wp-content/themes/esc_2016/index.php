@@ -11,10 +11,25 @@
 	<div class="growing-circle red-bg"></div><div class="growing-circle blue-bg"></div>
 	<div class="logo"></div>
 	<div class="text">
-		<h4 class="westfield">ESC Game Theater Now at Westfield Garden State Plaza</h4>
-		<h4>Your favorite 30 person gaming experience.</h4>
-		<h4 class="blue">Welcome to a brand new way to play.</h4>
-		<a href="https://esc.ticketleap.com/" class="tickets" target="_blank">Tickets</a>
+	<?php $the_query = new WP_Query( 'page_id=2' );
+		if ( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
+		$the_query->the_post();	
+		if( have_rows('headers') ):
+		$count = 1;
+		while( have_rows('headers') ): the_row(); 
+		$header = get_sub_field('header'); 
+		if($count == 1) {
+			echo '<h4 class="westfield">';
+		} else if($count == 3) {
+			echo '<h4 class="blue">';	
+		} else {
+			echo '<h4>';
+		}
+		echo $header.'</h4>';
+		$count++;
+		endwhile; endif; } } ?>
+		<a href="<?php echo get_field('tickets_link', 2); ?>" class="tickets" target="_blank">Tickets</a>
 	</div>
 </div>
 
@@ -105,7 +120,7 @@ if ( $the_query->have_posts() ) {
 		echo '<div class="left">';
 		echo '<h2>' . get_the_title() . '</h2>';
 		echo '<p>' .the_content() . '</p>';
-		echo '<a href="https://esc.ticketleap.com/" class="buy-tickets">Tickets</a>';
+		echo '<a href="'.get_field('tickets_link', 2).'" class="buy-tickets" target="_blank">Tickets</a>';
 		echo '</div><div class="right">';
 // 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 		echo '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.908564117844!2d-74.0788281845887!3d40.91775067931003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fbad32436c2b%3A0xe7ce50551f9fec50!2sGarden+State+Plaza%2C+Paramus%2C+NJ+07652!5e0!3m2!1sen!2sus!4v1474915374587" width="530" height="290" frameborder="0" style="border:0" allowfullscreen></iframe>';
