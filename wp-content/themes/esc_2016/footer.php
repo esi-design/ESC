@@ -9,8 +9,17 @@
 	<p>© <?php echo date(Y); ?> ESC Game Theater. All Rights Reserved.</p>
 </div>
 <div class="right">
-	<a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/fb.png" /></a>
-	<a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" /></a>
+<?php $the_query = new WP_Query( 'page_id=2' );
+	if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) {
+	$the_query->the_post();	if( have_rows('social_media') ):
+	while( have_rows('social_media') ): the_row(); 
+	$icon = get_sub_field('icon');
+	$link = get_sub_field('link'); 
+	if( !empty($icon) ):
+	echo '<a class="social" href="'.$link.'" target="_blank"><img src="'.$icon['url'].'" alt="'.$icon['alt'].'" /></a>'; 
+	endif; endwhile; endif;
+	} } ?>
 </div>
 </footer>
 </div><!-- page --> 
