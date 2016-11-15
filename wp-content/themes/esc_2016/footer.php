@@ -6,7 +6,14 @@
 ?>
 <footer>
 <div class="left">
-	<p>© <?php echo date(Y); ?> ESC Game Theater. All Rights Reserved.</p>
+	<?php $the_query = new WP_Query( 'page_id=2' );
+	if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) {
+	$the_query->the_post();	
+	$footer_text = get_field('footer_text');
+	echo '<p>'.$footer_text.'</p>';
+	} }
+	?>
 </div>
 <div class="right">
 <?php $the_query = new WP_Query( 'page_id=2' );

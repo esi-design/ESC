@@ -345,7 +345,7 @@ var Grid = (function() {
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
 			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$link = $( '<p></p>' );
+			this.$link = $( '<p>Learn more at <a href="#"></a></p>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$link );
 			this.$loading = $( '<div class="og-loading"></div>' );
 // 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
@@ -389,9 +389,11 @@ var Grid = (function() {
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$link.html( eldata.link );
+// 			this.$link.html( eldata.link );
+			this.$link.attr( 'href', eldata.link );
 			this.$href.attr( 'href', eldata.href );
-
+			this.$link.find('a').html(eldata.link);
+			
 			var self = this;
 			
 			// remove the current image in the preview

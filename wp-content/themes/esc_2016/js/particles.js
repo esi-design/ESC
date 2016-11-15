@@ -13,7 +13,7 @@
 	function Main() {
 		canvas = document.getElementById("testCanvas");
 		canvas.width = 792;
-		canvas.height = 300;
+		canvas.height = 310;
 		context = canvas.getContext('2d');
 		context.globalCompositeOperation = "lighter";
 		addStats();
@@ -24,9 +24,9 @@
 	function addStats() {
 		stats = new Stats();
 		stats.setMode(2);
-		stats.domElement.style.position = 'absolute';
-		stats.domElement.style.left = '0px';
-		stats.domElement.style.top = '0px';
+// 		stats.domElement.style.position = 'absolute';
+// 		stats.domElement.style.left = '0px';
+// 		stats.domElement.style.top = '0px';
 // 		document.getElementById('container').appendChild(stats.domElement);
 	}
 
@@ -45,13 +45,13 @@
 		proton = new Proton;
 		emitter = new Proton.Emitter();
 		//setRate
-		emitter.rate = new Proton.Rate(new Proton.Span(15, 20), new Proton.Span(.6));
+		emitter.rate = new Proton.Rate(new Proton.Span(20, 35), new Proton.Span(.5));
 		//addInitialize
 		emitter.addInitialize(new Proton.Position(new Proton.PointZone(0, 0)));
 		emitter.addInitialize(new Proton.Mass(1));
-		emitter.addInitialize(new Proton.Radius(1, 4));
-		emitter.addInitialize(new Proton.Life(3));
-		emitter.addBehaviour(new Proton.Alpha(.8, .1));
+		emitter.addInitialize(new Proton.Radius(1, 7));
+		emitter.addInitialize(new Proton.Life(1.2,2.5));
+		emitter.addBehaviour(new Proton.Alpha(1, .3));
 		var imagedata = context.getImageData(rect.x, rect.y, rect.width, rect.height);
 		emitter.addInitialize(new Proton.P(new Proton.ImageZone(imagedata, rect.x, rect.y + 50)));
 		//addBehaviour

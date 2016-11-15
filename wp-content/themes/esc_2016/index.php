@@ -10,6 +10,14 @@
 	<canvas id="testCanvas"></canvas>
 	<div class="growing-circle red-bg"></div><div class="growing-circle blue-bg"></div>
 	<div class="logo"></div>
+     <div id="animation">
+		<video id="video" style="display:none" autoplay>
+			<source src="img/logo-animation2.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+		</video>
+		<canvas width="502" height="970" id="buffer"></canvas>
+		<canvas width="502" height="335" id="output"></canvas>
+	</div>
+
 	<div class="text">
 	<?php $the_query = new WP_Query( 'page_id=2' );
 		if ( $the_query->have_posts() ) {
@@ -20,16 +28,18 @@
 		while( have_rows('headers') ): the_row(); 
 		$header = get_sub_field('header'); 
 		if($count == 1) {
-			echo '<h4 class="westfield">';
+			echo '<div><h4 class="westfield">';
 		} else if($count == 3) {
-			echo '<h4 class="blue">';	
+			echo '<div><h4 class="blue">';	
 		} else {
-			echo '<h4>';
+			echo '<div><h4>';
 		}
-		echo $header.'</h4>';
+		echo $header.'</h4></div>';
+		if($count == 1) {
+			echo '<div><a href="'.get_field('tickets_link', 2).'" class="tickets" target="_blank">Tickets</a></div>';
+		}
 		$count++;
 		endwhile; endif; } } ?>
-		<a href="<?php echo get_field('tickets_link', 2); ?>" class="tickets" target="_blank">Tickets</a>
 	</div>
 </div>
 
@@ -44,7 +54,7 @@ if ( $the_query->have_posts() ) {
 		echo '<iframe src="https://player.vimeo.com/video/189053278" width="768" height="432" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 		echo '</div><div class="text">';
 		echo '<h2>' . get_the_title() . '</h2>';
-		echo '<p>' .the_content() . '</p>';
+		echo the_content();
 		echo '</div>';
 	}
 }
@@ -82,6 +92,7 @@ if ( $the_query->have_posts() ) {
 	}
 }
 wp_reset_postdata(); 
+$text = array();
 $args = array(
     'post_type' =>'games',
     'orderby' => 'rand',
@@ -103,12 +114,20 @@ if ( $new_query->have_posts() ) {
 				<source src="'.$promo_mp4.'" type="video/mp4; codecs="avc1.42E01E" />
 			</video>';
 		}
+		$content = get_the_content();
+		array_push($text,$content);
 		echo '</div>';
 	}
 	echo '</div>';
 }
-wp_reset_postdata(); 
-?>
+wp_reset_postdata(); ?>
+<div class="carousel-text">
+		<?php foreach($text as $key => $value) {
+			echo '<div class="item">';
+			echo '<p>'.$value.'</p>';
+			echo '</div>';
+		} ?>
+</div>
 </div>
 
 <div class="locations black">
@@ -119,7 +138,7 @@ if ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		echo '<div class="left">';
 		echo '<h2>' . get_the_title() . '</h2>';
-		echo '<p>' .the_content() . '</p>';
+		echo the_content();
 		echo '<a href="'.get_field('tickets_link', 2).'" class="buy-tickets" target="_blank">Tickets</a>';
 		echo '</div><div class="right">';
 // 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
@@ -139,7 +158,7 @@ if ( $the_query->have_posts() ) {
 		$the_query->the_post();	
 		echo '<div class="text">';
 		echo '<h2>' . get_the_title() . '</h2>';
-		echo '<p>' .the_content() . '</p>';
+		echo the_content();
 		echo '</div><ul id="og-grid" class="og-grid">';
 		if( have_rows('partners') ):
 		while( have_rows('partners') ): the_row(); 
@@ -180,6 +199,7 @@ if ( $query->have_posts() ) {
 </div>
 
 <div class="join gray">
+	<a name="contact" class="anchor"></a>
 <?php
 $the_query = new WP_Query( 'page_id=646' );
 if ( $the_query->have_posts() ) {
@@ -187,7 +207,7 @@ if ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		echo '<div class="text contact">';
 		echo '<h2>' . get_the_title() . '</h2>';
-		echo '<p>' .the_content() . '</p>';
+		echo the_content();
 		echo '</div>';
 	}
 }
