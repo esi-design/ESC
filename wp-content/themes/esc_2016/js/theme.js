@@ -123,6 +123,7 @@ $('.carousel-text').slick({
 });
 
 
+if(!isMobile()) {
 $('.carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
 	$('.carousel').slick('slickPause');
 // 	console.log(currentSlide);
@@ -146,6 +147,9 @@ $('.carousel').on('afterChange', function(event, slick, currentSlide, nextSlide)
 		});
 	};
 });
+}
+
+
 });
 
 function canvas(){

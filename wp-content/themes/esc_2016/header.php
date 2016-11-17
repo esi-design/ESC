@@ -39,6 +39,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php include('analytics.php'); ?>
 <!--
 Start of DoubleClick Floodlight Tag: Please do not remove
 Activity name of this tag: Site Visit

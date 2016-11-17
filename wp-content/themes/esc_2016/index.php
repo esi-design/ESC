@@ -219,8 +219,8 @@ if ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		echo '<div class="text">';
 		echo '<h2>' . get_the_title() . '</h2>';
-// 		echo '<p>' .the_content() . '</p>';
-		echo '<a href="https://esc.ticketleap.com/" class="email" target="_blank">Email Address*</a>';
+		echo the_content();
+// 		echo '<a href="https://esc.ticketleap.com/" class="email" target="_blank">Email Address*</a>';
 // 		echo '<a href="'.get_site_url().'/about" class="about-us">About Us</a>';
 		echo '</div>';
 // 		echo '<div class="growing-circle red-bg"></div><div class="growing-circle blue-bg"></div>';

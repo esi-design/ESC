@@ -202,7 +202,7 @@ $red: #f6303e;
 
 #wrapper {
 	margin: 0 auto;
-	max-width: 1600px;
+// 	max-width: 1600px;
 	overflow: hidden;
 }
 
@@ -244,6 +244,7 @@ $red: #f6303e;
 .text {
 	margin: 0 auto;
 	width: 75%;
+	max-width: 1400px;
 }
 
 .right {
@@ -533,6 +534,8 @@ $red: #f6303e;
 	width: 100%;
 	z-index: 1;
 	margin-top: -50px;
+	height: 334px;
+	overflow: hidden;
 }
 
 #output {
@@ -952,7 +955,7 @@ $red: #f6303e;
 .slick-arrow {
 	border: none;
 	background: none;
-	font-size: 24px;
+	font-size: 26px;
 	position: absolute;
 	content: "";
 // 	text-indent: -9999px;
@@ -969,7 +972,7 @@ $red: #f6303e;
 .slick-arrow::before {
 //     top: 3pt;
     content: "";
-    	text-indent: -9999px;
+    text-indent: -9999px;
     display: inline-block;
     /* By using an em scale, the arrows will size with the font */
     width: 1em;
@@ -982,8 +985,8 @@ $red: #f6303e;
 
 .slick-next {
 	transform: rotate(45deg);
-    top: 35%;
-	right: 5%;
+    top: 40%;
+    right: 3%;
 }
 
 .slick-next:before {
@@ -992,8 +995,8 @@ $red: #f6303e;
 
 .slick-prev {
 	transform: rotate(225deg);	
-	left: 6%;
-    top: 30%;
+	left: 3%;
+    top: 34%;
 }
 
 
@@ -1248,6 +1251,74 @@ footer {
 	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
 }
 
+
+.esc_wrapper {
+	margin: 0 auto !important;
+    width: 350px !important;
+	input#input_1_1 {
+		background: transparent url('../img/email-input.png') no-repeat;
+		border: none;
+		padding: 0 0 0 15px;
+		height: 39px;
+		width: 290px;
+	}
+}
+
+.gform_wrapper .top_label .gfield_label {
+	display: none !important;
+}
+
+body .gform_wrapper label.gfield_label + div.ginput_container {
+	float: left;
+	margin: 0 !important;
+	width: 300px;
+}
+
+.gform_wrapper ul li.gfield, .gform_wrapper .gform_footer {
+	padding: 0 !important;
+	margin: 0 !important;
+	clear: none !important;
+}
+
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
+		background: transparent url('../img/email-submit.png') no-repeat;
+		border: none;
+		float: left;
+// 		padding: 0 0 0 15px;
+		height: 39px;
+		width: 42px;
+}
+
+.gform_wrapper div.validation_error {
+	color: $red !important;
+	font-size: 12px !important;
+	font-weight: 300 !important;
+	line-height: 150%;
+	margin: 0 !important;
+	border: none !important;
+	padding: 0 !important;
+}
+
+.gform_wrapper .top_label .gfield_error {
+	clear: none !important;
+	float: left !important;
+	width: 308px !important;
+}
+
+.esc_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+	background: none !important;
+	color: #FFFFFF !important;
+	font-size: 12px;
+	padding: 0px 2px 2px !important;
+	border: none !important;
+}
+
+.gform_wrapper .validation_message {
+	color: #FFFFFF !important;
+	font-size: 12px;
+}
+
+
 @media screen and (max-width: 830px) {
 
 	.og-expander h3 { font-size: 32px; }
@@ -1287,13 +1358,14 @@ footer {
     transform: scale(1.0);	
 }
 
+/*
 .games {
 	padding-bottom: 42%;
 }
+*/
 
 .carousel-text {
 	bottom: -10px;
-    left: 5%;
     width: 90%;
 }
 
@@ -1324,6 +1396,10 @@ footer {
 	max-width: 100%;
 }
 
+.who {
+	padding-bottom: 15%;
+}
+
 }
 
 @media only screen and (max-width: 625px) {
@@ -1335,12 +1411,27 @@ footer {
 }
 
 
+/*
 .carousel-text {
 	display: none;
 }
+*/
 }
 
 @media only screen and (max-width: 490px) {
+p, a {
+	font-size: 14px;
+	line-height: 160%;
+	margin-bottom: 3%;
+}
+
+#menu-navigation li {
+	padding: 6px 0;
+	a {
+		font-size: 20px;
+	}
+}
+
 h2 {
 	font-size: 24px;
 }
@@ -1353,20 +1444,47 @@ h4 {
 	font-size: 17px;
 }
 
+.intro h4.westfield {
+	margin: 0 auto 15px;
+	width: 200px;
+}
+
 .intro h4 {
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .gray, .black {
 	padding: 6% 2%;
 }
 
+.intro {
+	padding-left: 0%;
+	padding-right: 0%;
+}
+
 .text {
 	width: 100%;
 }
 
+.experience .right {
+	text-align: center;
+	p {
+		text-align: center;	
+	}
+}
+
+/*
 .games {
 	padding-bottom: 68%;
+}
+*/
+
+.slick-prev {
+	left: 1%;
+}
+
+.slick-next {
+	right: 1%;
 }
 
 .left, .right {
@@ -1429,6 +1547,18 @@ h4 {
 
 .og-expander-inner {
 	padding: 2% 1% 0;
+}
+
+.esc_wrapper {
+	width: 300px;
+}
+
+body .gform_wrapper label.gfield_label + div.ginput_container {
+	width: 250px;
+}
+
+.esc_wrapper input#input_1_1 {
+	width: 240px;
 }
 
 }
