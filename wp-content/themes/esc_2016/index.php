@@ -27,7 +27,8 @@
 		$count = 1;
 		while( have_rows('headers') ): the_row(); 
 		$header = get_sub_field('header'); 
-		if($count == 1) {
+		//I think this will do what I want - PV
+		/*if($count == 1) {
 			echo '<div><h4 class="westfield">';
 		} else if($count == 3) {
 			echo '<div><h4 class="blue">';	
@@ -39,7 +40,7 @@
 			echo '<div><a href="'.get_field('tickets_link', 2).'" class="tickets" target="_blank">Tickets</a></div>';
 		}
 		$count++;
-		endwhile; endif; } } ?>
+		endwhile; endif; */} } ?>
 	</div>
 </div>
 
