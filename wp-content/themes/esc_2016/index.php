@@ -129,28 +129,8 @@ wp_reset_postdata(); ?>
 		} ?>
 </div>
 </div>
-/*
-<div class="locations black">
-<?php
-$the_query = new WP_Query( 'page_id=601' );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-		$the_query->the_post();
-		echo '<div class="left">';
-		echo '<h2>' . get_the_title() . '</h2>';
-		echo the_content();
-		echo '<a href="'.get_field('tickets_link', 2).'" class="buy-tickets" target="_blank">Tickets</a>';
-		echo '</div><div class="right">';
-// 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-		echo '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.908564117844!2d-74.0788281845887!3d40.91775067931003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fbad32436c2b%3A0xe7ce50551f9fec50!2sGarden+State+Plaza%2C+Paramus%2C+NJ+07652!5e0!3m2!1sen!2sus!4v1474915374587" width="530" height="290" frameborder="0" style="border:0" allowfullscreen></iframe>';
-		echo '</div>';
-	}
-}
 
-wp_reset_postdata(); ?>
-</div>
-*/
-<div class="who gray">
+<div class="who black">
 	<a name="about" class="anchor"></a>
 <?php
 $the_query = new WP_Query( 'page_id=644' );
@@ -176,7 +156,7 @@ if ( $the_query->have_posts() ) {
 wp_reset_postdata(); ?>
 </div>
 
-<div class="news black">
+<div class="news gray">
 	<a name="news" class="anchor"></a>
 <?php
 	$args = array(
@@ -199,7 +179,7 @@ if ( $query->have_posts() ) {
 } ?>
 </div>
 
-<div class="join gray">
+<div class="join black">
 	<a name="contact" class="anchor"></a>
 <?php
 $the_query = new WP_Query( 'page_id=646' );
