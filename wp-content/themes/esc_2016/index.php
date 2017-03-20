@@ -129,7 +129,7 @@ wp_reset_postdata(); ?>
 		} ?>
 </div>
 </div>
-
+/*
 <div class="locations black">
 <?php
 $the_query = new WP_Query( 'page_id=601' );
@@ -146,9 +146,10 @@ if ( $the_query->have_posts() ) {
 		echo '</div>';
 	}
 }
+
 wp_reset_postdata(); ?>
 </div>
-
+*/
 <div class="who gray">
 	<a name="about" class="anchor"></a>
 <?php
